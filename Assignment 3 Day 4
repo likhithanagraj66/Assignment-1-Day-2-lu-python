@@ -1,0 +1,47 @@
+QUESTION 1
+
+Write down a program in Python for Opening a File and Writing " I Love LetsUpgrade" And close it, and read it back again, and then append some data to it and close it.
+
+In [34]:
+abc=open("file1.txt",'w')
+abc.write("I Love LetsUpgrade")
+abc.close()
+In [35]:
+abc=open("file1.txt",'a+')
+abc.read()
+abc.write("\nlets upgrade")
+abc.close()
+In [37]:
+abc=open("file1.txt",'r')
+content=abc.read()
+abc.close()
+In [38]:
+print(content)
+
+OUTPUT:-
+I Love LetsUpgrade
+lets upgrade
+
+
+QUESTION 2
+
+Write a function which can return a Factorial of any numbers as INT, given in the argument.
+
+In [51]:
+def factorial(num):
+    if num==1:
+        return num
+    else:
+        fact=num*factorial(num-1)
+    return fact
+n=int(input("Enter a number:"))
+if n<0:
+    print("Number should be greater than or equal to 0")
+elif n==0:
+    print("Factorial of 0 is 1")
+else:    
+    print("Factorial of ",n,"is: ",factorial(n))
+
+OUTPUT:-
+Enter a number:5
+Factorial of  5 is:  120 
