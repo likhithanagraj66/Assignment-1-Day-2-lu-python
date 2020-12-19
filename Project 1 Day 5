@@ -1,0 +1,31 @@
+from cryptography.fernet import Fernet
+def generate_Key():
+    key=Fernet.generate_key()  
+    keyfile=open('storekey.txt','wb')
+    keyfile.write(key)
+    keyfile.close()
+    
+def get_key():
+    return open('storekey.txt','rb').read()
+def encrypt_Message(message):
+    key=get_key()
+    f=Fernet(key)
+    encrypted_Message=f.encrypt(message.encode())
+    print("Encrypted Message is: ",encrypted_Message)
+    return encrypted_Message
+    
+    
+def decrypt_Message(encrypted_Message):
+    key=get_key()
+    f=Fernet(key)
+    decrypted_message=f.decrypt(encrypted_Message)
+    print("Decrypted Message is: ",decrypted_message.decode())
+    
+message=input("Enter Message to encrypt: ")
+encrypted_Message=encrypt_Message(message)
+decrypt_Message(encrypted_Message)
+
+OUTPUT:-
+Enter Message to encrypt: I Love LetsUpgrade
+Encrypted Message is:  b'gAAAAABf2JdZpCDb7FQml7SWFTVbGK29Yy-wZz-MizIaKswBTQ069gOBbEbkyejc7lZtKxsNO1QgfRw947Cof3WWAi9kXYR1sZ7VRiGXaZqQ8pHbBCYQ-2o='
+Decrypted Message is:  I Love LetsUpgrade
