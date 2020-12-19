@@ -1,0 +1,51 @@
+#QUESTION 1
+# 1.TRY 5 DIFFERENT FUNCTIONS OF THE STRING IN PYTHON
+string=input("Enter some String:")
+print()
+print("My string is:"+string)
+print()
+print("place of l:",string.index("l")) 
+print()
+print("String in upper case:"+string.upper()) 
+print()
+print("Number of o's:",string.count("o")) 
+print()
+print("String in lower case:"+string.lower()) 
+print()
+print("split string :",string.split(","))
+
+#QUESTION 2
+# 2.TRY 5 DIFFERENT FUNCTIONS OF THE LIST OBJECT IN THE PYTHON
+l=[1,2,3,4,"HELLO WORLD",15.5,"LU PYTHON",[6,7],{1:'Y',2:'HELLO',3:'WORLD'}]
+print(type(l))
+print()
+l.insert(5,'FIVE') 
+print("Adding element 'FIVE' at index 5:",l)
+print()
+l.pop(3) 
+print("Element '4' removed at index 3:",l)
+print()
+l.reverse()
+print("Reversed list is:",l)
+print()
+l1=l.copy() 
+print("Copy of l is:",l1)
+print()
+l.clear() 
+print("List is cleared:",l)
+
+#QUESTION 3
+# 3. EXPERIMENT WITH AT LEAST 5 DEFAULT FUNCTION OF DICTIONARY
+d={1:'a',2:'A',3:[1,2,3],4:{'a':1,'b':2},'c':'HELLO WORLD'}
+print("Specified value for key 'c' is:",d.get('c')) # Returns the value of specified key
+print()
+print("Items in d are:",d.items()) # Returns list containing a tuple for each key value pair
+print()
+d.setdefault(5,'python') # Returns the value of the specified key.If it is not present, insert the key with specified value
+print("value of 5 is :",d)
+print()
+d.update({2:'b'})
+print("updated dictionary, after value update for key '2':",d)
+print()
+d.popitem() # removes last inserted key-value pair
+print("Dictionary after poping item:",d)
